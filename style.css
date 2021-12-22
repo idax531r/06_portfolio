@@ -1,0 +1,183 @@
+/*gør billeder responsive*/
+img {
+  width: 100%;
+}
+
+/*reset browserens default margin og padding*/
+* {
+  box-sizing: border-box; /*inkludere padding og border i værdien du sætter for fx width*/
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1200px) auto;
+}
+/*____Generelt / mobile-version*/
+header .logo {
+  width: 15%;
+  margin: 20px 0 0 20px;
+}
+
+article {
+  margin: 5rem;
+  padding: 5rem;
+}
+/*____TEKST____*/
+/*font-family: 'Playfair Display', serif;
+
+    font-family: 'Raleway', sans-serif;
+
+    font-family: 'Roboto Slab', serif;*/
+
+#first {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+#first {
+  grid-column: 1/4;
+}
+
+#first .content,
+#first .splash {
+  grid-area: 1/1;
+  place-items: center;
+}
+
+#first .content {
+  z-index: 1;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+}
+
+h1,
+.page_logo {
+  grid-row: 1/2;
+}
+
+h1 {
+  grid-column: 1/6;
+  align-self: start;
+  z-index: 1;
+}
+
+h1 {
+  font-family: "raleway", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: white;
+}
+
+.page_logo {
+  grid-column: 2/5;
+  align-self: end;
+  width: 80%;
+}
+
+#first .splash {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*___TABLET/WEB version___*/
+@media (min-width: 600px) {
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    right: 5px;
+    width: 100%;
+    z-index: 2;
+    gap: 10px;
+  }
+
+  nav .logo {
+    display: flex;
+    margin-right: auto;
+    width: 10%;
+    top: 10px;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    margin-top: 30px;
+  }
+
+  li a {
+    font-family: "playfair display", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: black;
+    text-decoration: none; /*fjerner underline*/
+    margin: 20px;
+    padding: 10px;
+    /*transition: 0.5s;*/
+  }
+
+  li a:hover {
+    /*border: 2px solid #347c8a;*/
+    background-color: #025b69;
+    border-radius: 5%;
+    color: white;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+/*___WEB version___*/
+@media (min-width: 1000px) {
+  #first .splash {
+    height: 100vh;
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    right: 5px;
+    width: 100%;
+    z-index: 2;
+    gap: 10px;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+  }
+
+  li a {
+    font-family: "playfair display", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: black;
+    text-decoration: none; /*fjerner underline*/
+    margin: 20px;
+    padding: 10px;
+    /*transition: 0.5s;*/
+  }
+
+  li a:hover {
+    /*border: 2px solid #347c8a;*/
+    background-color: #025b69;
+    border-radius: 5%;
+    color: white;
+  }
+
+  h1 {
+    font-size: 9rem;
+  }
+}
