@@ -10,27 +10,66 @@ img {
   padding: 0;
 }
 
-main {
+main > *:not(#first) {
   display: grid;
   grid-template-columns: auto minmax(0, 1200px) auto;
 }
-/*____Generelt / mobile-version*/
-header .logo {
-  width: 15%;
-  margin: 20px 0 0 20px;
+
+main section > *:not(#first) {
+  grid-column: 1/4;
 }
 
-article {
-  margin: 5rem;
-  padding: 5rem;
+/******____Generelt / mobil-version____******/
+
+section {
+  margin: 5px;
+  padding: 10px;
 }
-/*____TEKST____*/
-/*font-family: 'Playfair Display', serif;
 
-    font-family: 'Raleway', sans-serif;
+/*overskriver first section fra overstående regel*/
+#first {
+  margin: 0;
+  padding: 0;
+}
 
-    font-family: 'Roboto Slab', serif;*/
+h1 {
+  font-family: "raleway", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: white;
+}
 
+h2 {
+  font-family: "raleway", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+}
+
+h3 {
+  font-family: "playfair display", serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 10px 0px 10px 0px;
+}
+
+h4 {
+  font-family: "roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 5px 0px 2px 0px;
+}
+
+p {
+  font-family: "roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin: 0px 0px 5px 0px;
+}
+
+/*CSS for splash billede*/
 #first {
   display: grid;
   place-items: center;
@@ -71,13 +110,6 @@ h1 {
   z-index: 1;
 }
 
-h1 {
-  font-family: "raleway", sans-serif;
-  font-size: 2.5rem;
-  font-weight: bolder;
-  color: white;
-}
-
 .page_logo {
   grid-column: 2/5;
   align-self: end;
@@ -90,15 +122,21 @@ h1 {
   object-fit: cover;
 }
 
+/*logo i toppen af undersider*/
+header .logo {
+  width: 25%;
+  margin: 10px 0 0 10px;
+}
+
 /*___TABLET/WEB version___*/
 @media (min-width: 600px) {
   nav {
     display: flex;
     justify-content: flex-end;
-    position: fixed;
-    right: 5px;
+    position: relative;
+    right: 2px;
     width: 100%;
-    z-index: 2;
+    z-index: 1;
     gap: 10px;
   }
 
@@ -112,7 +150,7 @@ h1 {
   ul {
     display: flex;
     list-style: none;
-    margin-top: 30px;
+    margin-top: 10px;
   }
 
   li a {
@@ -121,7 +159,7 @@ h1 {
     font-weight: 400;
     color: black;
     text-decoration: none; /*fjerner underline*/
-    margin: 20px;
+    margin: 10px;
     padding: 10px;
     /*transition: 0.5s;*/
   }
@@ -133,8 +171,19 @@ h1 {
     color: white;
   }
 
+  section {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  /*overskriver first section fra overstående regel*/
+  #first {
+    margin: 0;
+    padding: 0;
+  }
+
   h1 {
-    font-size: 4rem;
+    font-size: 5rem;
   }
 }
 
@@ -152,6 +201,10 @@ h1 {
     width: 100%;
     z-index: 2;
     gap: 10px;
+  }
+
+  .menu {
+    position: relative;
   }
 
   ul {
@@ -175,6 +228,17 @@ h1 {
     background-color: #025b69;
     border-radius: 5%;
     color: white;
+  }
+
+  section {
+    margin: 40px 100px 30px 100px;
+    padding: 30px;
+  }
+
+  /*overskriver first section fra overstående regel*/
+  #first {
+    margin: 0;
+    padding: 0;
   }
 
   h1 {
