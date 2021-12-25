@@ -15,7 +15,7 @@ main > *:not(#first) {
   grid-template-columns: auto minmax(0, 1200px) auto;
 }
 
-main section > *:not(#first) {
+main section > * {
   grid-column: 1/4;
 }
 
@@ -41,7 +41,7 @@ h1 {
 
 h2 {
   font-family: "raleway", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
@@ -50,35 +50,37 @@ h2 {
 
 h3 {
   font-family: "playfair display", serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 400;
   margin: 10px 0px 10px 0px;
+  letter-spacing: 0.5px;
 }
 
 h4 {
-  font-family: "roboto", sans-serif;
-  font-size: 1rem;
+  font-family: "open sans", sans-serif;
+  font-size: 0.9rem;
   font-weight: 400;
-  margin: 5px 0px 2px 0px;
+  margin: 15px 0px 5px 0px;
 }
 
 p {
-  font-family: "roboto", sans-serif;
+  font-family: "open sans", sans-serif;
   font-size: 0.9rem;
   font-weight: 300;
-  margin: 0px 0px 5px 0px;
+  margin: 0px 0px 10px 0px;
 }
 
 /*CSS for splash billede*/
 #first {
   display: grid;
+  position: relative;
   place-items: center;
-  width: 100%;
+  /*width: 100%;*/
 }
 
-#first {
+/*#first {
   grid-column: 1/4;
-}
+}*/
 
 #first .content,
 #first .splash {
@@ -96,7 +98,7 @@ p {
 
   width: 50%;
   height: 50%;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
 }
 
 h1,
@@ -128,16 +130,49 @@ header .logo {
   margin: 10px 0 0 10px;
 }
 
+/*_OM MIG_*/
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr auto;
+  background-color: #F6A903;
+  margin: 5px;
+  margin-top: 8rem;
+}
+
+.portrait {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  margin-top: -7rem;
+}
+
+.portrait {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.text {
+  grid-column: 1/4;
+  grid-row: 2/3;
+  padding: 10px;
+  margin: 10px;
+}
+
 /*___TABLET/WEB version___*/
 @media (min-width: 600px) {
   nav {
     display: flex;
     justify-content: flex-end;
-    position: relative;
+    position: fixed;
     right: 2px;
     width: 100%;
     z-index: 1;
-    gap: 10px;
+    /*gap: 10px;*/
+  }
+
+  .menu {
+    position: relative;
   }
 
   nav .logo {
@@ -150,7 +185,7 @@ header .logo {
   ul {
     display: flex;
     list-style: none;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   li a {
@@ -182,53 +217,104 @@ header .logo {
     padding: 0;
   }
 
+  /*_TEXT_*/
   h1 {
     font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+    margin-top: 20px;
+
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  /*_OM MIG_*/
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 2rem auto 2rem auto;
+  }
+
+  .portait, .text {
+    grid-row: 1/1;
+  }
+
+  .portrait {
+    grid-column: 1/2;
+    margin: 20px;
+    padding: 2rem;
+    place-self: center;
+  }
+
+  .text {
+    grid-column: 2/3;
+    place-self: center;
   }
 }
 
 /*___WEB version___*/
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   #first .splash {
     height: 100vh;
   }
 
-  nav {
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    right: 5px;
+  .content {
+    height: 55%;
+  }
+
+  /*nav {
+    /*display: flex;*/
+  /*justify-content: flex-end;*/
+  /*position: fixed;
     width: 100%;
-    z-index: 2;
-    gap: 10px;
-  }
+    z-index: 1;
+    /*gap: 10px;
+  }*/
 
-  .menu {
+  /*.menu {
     position: relative;
-  }
+  }*/
 
-  ul {
+  /*ul {
     display: flex;
     list-style: none;
-  }
+  }*/
 
   li a {
-    font-family: "playfair display", sans-serif;
+    /*font-family: "playfair display", sans-serif;*/
     font-size: 1.3rem;
-    font-weight: 400;
+    /*font-weight: 400;
     color: black;
     text-decoration: none; /*fjerner underline*/
     margin: 20px;
-    padding: 10px;
+    /*padding: 10px;*/
     /*transition: 0.5s;*/
   }
 
-  li a:hover {
-    /*border: 2px solid #347c8a;*/
+  /*li a:hover {
+    /*border: 2px solid #347c8a;
     background-color: #025b69;
     border-radius: 5%;
     color: white;
-  }
+  }*/
+
+  /*.content {
+    height: 55%;
+  }*/
 
   section {
     margin: 40px 100px 30px 100px;
@@ -243,5 +329,19 @@ header .logo {
 
   h1 {
     font-size: 9rem;
+  }
+
+  
+
+  /*_OM MIG_*/
+  .container {
+    margin: 2rem 5rem 2rem 5rem;
+  }
+
+  .text {
+    place-self: center;
+  }
+
+
   }
 }
