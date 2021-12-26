@@ -21,27 +21,37 @@ main section > * {
 
 /******____Generelt / mobil-version____******/
 
-/*_BURGER MENU_*/
+/*___BURGER MENU___*/
 .hidden {
   transform: translateX(-100%);
   opacity: 0;
+  position: fixed;
 }
 
 #menuknap {
   display: inline-block;
+  position: fixed;
+  z-index: 3;
+  color: black;
+  font-size: 1.5rem;
+  margin: 2px 2px 2px 5px;
+  padding: 2px;
+  curser: pointer;
 }
 
 #menu {
+  position: fixed;
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
-  gap: 10px;
-  z-index: 1;
+  align-items: center;
+  gap: 15px;
+  z-index: 2;
   list-style-type: none;
-  transition: transform 3s;
+  transition: transform 2s;
   transform-origin: top left;
   background-color: #025B69;
-  padding: 10px;
+  margin: 0;
+  padding: 2rem;
 }
 
 li a {
@@ -200,37 +210,41 @@ header .logo {
 /*___TABLET/WEB version___*/
 @media (min-width: 600px) {
 
-/*_Burger menu_*/
+/*__MENU__*/
+/*fjerner burgermenu knap*/
 #menuknap {
   display: none;
 }
 
+/*gør menu synlig*/
 #menu.hidden {
-  transition: translateX(0);
   opacity: 1;
+}
+
+#menu {
+  all: unset;
+}
+
+#menu {
+  display: flex;
+  list-style-type: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 nav {
   position: fixed;
   display: flex;
   justify-content: flex-end;
-  right: 2px;
   width: 100%;
   z-index: 1;
-  /*gap: 10px;*/
   }
 
-#menu {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  z-index: 1;
-  list-style-type: none;
-  transition: transform 3s;
-  transform-origin: top left;
-  background-color: transparent;
-  padding: 10px;
-}
+  .page_nav {
+    position: relative;
+    background-color: green;
+  }
+
 
   /*.menu {
     position: relative;
@@ -241,12 +255,6 @@ nav {
     margin-right: auto;
     width: 10%;
     top: 10px;
-  }
-
-  ul {
-    display: flex;
-    list-style: none;
-    margin-top: 20px;
   }
 
   li a {
