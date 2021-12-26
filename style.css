@@ -21,6 +21,44 @@ main section > * {
 
 /******____Generelt / mobil-version____******/
 
+/*_BURGER MENU_*/
+.hidden {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+#menuknap {
+  display: inline-block;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  gap: 10px;
+  z-index: 1;
+  list-style-type: none;
+  transition: transform 3s;
+  transform-origin: top left;
+  background-color: #025B69;
+  padding: 10px;
+}
+
+li a {
+    font-family: "playfair display", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    text-decoration: none; /*fjerner underline*/
+    margin: 2px;
+    padding: 5px;
+    gap: 5px;
+  }
+
+li a:hover {
+  border: 1px solid white;
+  }
+
 section {
   margin: 5px;
   padding: 10px;
@@ -161,19 +199,42 @@ header .logo {
 
 /*___TABLET/WEB version___*/
 @media (min-width: 600px) {
-  nav {
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    right: 2px;
-    width: 100%;
-    z-index: 1;
-    /*gap: 10px;*/
+
+/*_Burger menu_*/
+#menuknap {
+  display: none;
+}
+
+#menu.hidden {
+  transition: translateX(0);
+  opacity: 1;
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  right: 2px;
+  width: 100%;
+  z-index: 1;
+  /*gap: 10px;*/
   }
 
-  .menu {
+#menu {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  z-index: 1;
+  list-style-type: none;
+  transition: transform 3s;
+  transform-origin: top left;
+  background-color: transparent;
+  padding: 10px;
+}
+
+  /*.menu {
     position: relative;
-  }
+  }*/
 
   nav .logo {
     display: flex;
@@ -196,13 +257,13 @@ header .logo {
     text-decoration: none; /*fjerner underline*/
     margin: 10px;
     padding: 10px;
-    /*transition: 0.5s;*/
   }
 
   li a:hover {
     /*border: 2px solid #347c8a;*/
     background-color: #025b69;
     border-radius: 5%;
+    border: none;
     color: white;
   }
 
