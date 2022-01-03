@@ -19,6 +19,13 @@ main section > * {
   grid-column: 1/4;
 }
 
+/*___ Custom properties ___*/
+html {
+  --primary-color: #f6a903;
+  --secondary-color: #347c8a;
+  --brand-accent-color: #025b69;
+}
+
 /******____Generelt / mobil-version____******/
 
 /*___BURGER MENU___*/
@@ -49,25 +56,25 @@ main section > * {
   list-style-type: none;
   transition: transform 2s;
   transform-origin: top left;
-  background-color: #025B69;
+  background-color: #025b69;
   margin: 0;
   padding: 2rem;
 }
 
 li a {
-    font-family: "playfair display", sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    color: white;
-    text-decoration: none; /*fjerner underline*/
-    margin: 2px;
-    padding: 5px;
-    gap: 5px;
-  }
+  font-family: "playfair display", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  text-decoration: none; /*fjerner underline*/
+  margin: 2px;
+  padding: 5px;
+  gap: 5px;
+}
 
 li a:hover {
   border: 1px solid white;
-  }
+}
 
 section {
   margin: 5px;
@@ -83,17 +90,18 @@ section {
 h1 {
   font-family: "raleway", sans-serif;
   font-size: 2.5rem;
-  font-weight: bolder;
-  color: white;
+  font-weight: bold;
+  color: black;
 }
 
 h2 {
   font-family: "raleway", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
   margin: 20px 0px 20px 0px;
+  color: var(--brand-accent-color);
 }
 
 h3 {
@@ -184,7 +192,7 @@ header .logo {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr auto;
-  background-color: #F6A903;
+  background-color: #f6a903;
   margin: 5px;
   margin-top: 8rem;
 }
@@ -207,55 +215,82 @@ header .logo {
   margin: 10px;
 }
 
+.container2 {
+  display: grid;
+  place-self: center;
+  background-color: var(--brand-accent-color);
+  color: white;
+  margin: 5px;
+}
+
+.container2 > h3,
+ul {
+  margin: 10px;
+  padding: 10px;
+}
+
+.container2 > ul li {
+  list-style: square;
+  font-family: "open sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin: 0px 0px 10px 0px;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 20px;
+  place-content: center;
+}
+
 /*___TABLET/WEB version___*/
 @media (min-width: 600px) {
+  /*__MENU__*/
+  /*fjerner burgermenu knap*/
+  #menuknap {
+    display: none;
+  }
 
-/*__MENU__*/
-/*fjerner burgermenu knap*/
-#menuknap {
-  display: none;
-}
+  /*gør menu synlig*/
+  #menu.hidden {
+    opacity: 1;
+  }
 
-/*gør menu synlig*/
-#menu.hidden {
-  opacity: 1;
-}
+  #menu {
+    all: unset;
+  }
 
-#menu {
-  all: unset;
-}
+  #menu {
+    display: flex;
+    list-style-type: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
-#menu {
-  display: flex;
-  list-style-type: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-nav {
-  position: fixed;
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  z-index: 1;
+  nav {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    z-index: 1;
   }
 
   .page_nav {
     position: relative;
-    background-color: green;
+    background-color: var(--primary-color);
   }
-
 
   /*.menu {
     position: relative;
   }*/
 
-  nav .logo {
+  /*nav .logo {
     display: flex;
     margin-right: auto;
     width: 10%;
     top: 10px;
-  }
+  }*/
 
   li a {
     font-family: "playfair display", sans-serif;
@@ -276,7 +311,7 @@ nav {
   }
 
   section {
-    margin: 20px;
+    margin: 20px 20px 10px 20px;
     padding: 15px;
   }
 
@@ -292,7 +327,7 @@ nav {
   }
 
   h2 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 400;
   }
 
@@ -303,7 +338,6 @@ nav {
   h4 {
     font-size: 1rem;
     margin-top: 20px;
-
   }
 
   p {
@@ -318,7 +352,8 @@ nav {
     margin: 2rem auto 2rem auto;
   }
 
-  .portait, .text {
+  .portait,
+  .text {
     grid-row: 1/1;
   }
 
@@ -332,6 +367,14 @@ nav {
   .text {
     grid-column: 2/3;
     place-self: center;
+  }
+
+  /*GRUNDLÆGGENDE WEB*/
+  #section_one,
+  #section_two,
+  #section_three {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
   }
 }
 
@@ -386,7 +429,7 @@ nav {
   }*/
 
   section {
-    margin: 40px 100px 30px 100px;
+    margin: 40px 100px 10px 100px;
     padding: 30px;
   }
 
@@ -400,17 +443,18 @@ nav {
     font-size: 9rem;
   }
 
-  
-
   /*_OM MIG_*/
   .container {
-    margin: 2rem 5rem 2rem 5rem;
+    margin: 2rem 5rem 1rem 5rem;
   }
 
   .text {
     place-self: center;
   }
 
-
+  .container2 {
+    width: 70%;
+    margin-top: 0rem;
+    place-content: center;
   }
 }
