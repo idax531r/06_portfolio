@@ -100,7 +100,7 @@ h2 {
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
-  margin: 20px 0px 20px 0px;
+  margin: 40px 0px 20px 0px;
   color: var(--brand-accent-color);
 }
 
@@ -237,6 +237,21 @@ ul {
   margin: 0px 0px 10px 0px;
 }
 
+/*GRUNDLÆGGENDE WEB*/
+.section_wrapper {
+  border: 2px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  padding: 1.5rem;
+}
+
+.section_wrapper img {
+  border: 1px solid black;
+}
+
+#section_two .h4 {
+  margin-top: 30px;
+}
+
 footer {
   background-color: var(--secondary-color);
   color: white;
@@ -370,11 +385,26 @@ footer {
   }
 
   /*GRUNDLÆGGENDE WEB*/
-  #section_one,
-  #section_two,
-  #section_three {
+
+  .section_wrapper {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    gap: 1.2rem;
+  }
+
+  .section_wrapper {
+    margin-top: 0;
+  }
+
+  #section_two .section_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 3rem;
+  }
+
+  #section_two .h4 {
+    margin-top: 0;
   }
 }
 
