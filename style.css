@@ -388,7 +388,7 @@ footer {
 
   .section_wrapper {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1.2rem;
   }
 
@@ -398,7 +398,7 @@ footer {
 
   #section_two .section_wrapper {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     row-gap: 3rem;
   }
