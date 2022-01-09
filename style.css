@@ -100,6 +100,21 @@ section {
   padding: 0;
 }
 
+footer {
+  background-color: var(--brand-accent-color);
+  padding: 20px;
+  place-content: center;
+  margin-top: 15rem;
+}
+
+footer p {
+  color: white;
+}
+
+.footer_forside {
+  margin-top: 0;
+}
+
 h1 {
   font-family: "raleway", sans-serif;
   font-size: 2.5rem;
@@ -121,9 +136,9 @@ h3 {
   font-family: "playfair display", serif;
   font-size: 1.3rem;
   font-weight: 400;
-  margin: 10px 0px 10px 0px;
+  margin: 0px 0px 10px 0px;
   letter-spacing: 0.5px;
-  color: white;
+  color: black;
 }
 
 h4 {
@@ -131,15 +146,15 @@ h4 {
   font-size: 0.9rem;
   font-weight: 400;
   margin: 15px 0px 5px 0px;
-  color: white;
+  color: black;
 }
 
 p {
   font-family: "open sans", sans-serif;
   font-size: 0.9rem;
   font-weight: 300;
-  margin: 0px 0px 10px 0px;
-  color: white;
+  margin: 0px 0px 20px 0px;
+  color: black;
 }
 
 section a {
@@ -157,6 +172,7 @@ section a {
 
 section a:hover {
   background: none;
+  color: black;
 }
 
 /*CSS for splash billede*/
@@ -213,13 +229,13 @@ h1 {
   object-fit: cover;
 }
 
-/*_OM MIG_*/
+/*********________OM MIG__________**********/
 
 .container {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr auto;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   border-radius: 20px;
   margin: 5px;
   margin-top: 8rem;
@@ -256,6 +272,7 @@ h1 {
 ul {
   margin: 10px;
   padding: 10px;
+  color: white;
 }
 
 .container2 > ul li {
@@ -307,11 +324,12 @@ ul {
 }
 
 /*TEMA SIDER*/
-.section_wrapper {
-  border: 2px solid var(--brand-accent-color);
+
+.section_wrapper div {
   border-radius: 20px;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   padding: 1.5rem;
+  margin-bottom: 5px;
 }
 
 .section_wrapper img {
@@ -322,16 +340,8 @@ ul {
   margin-top: 30px;
 }
 
-footer {
-  background-color: var(--brand-accent-color);
-  color: white;
-  padding: 20px;
-  place-content: center;
-  margin-top: 15rem;
-}
-
-.footer_forside {
-  margin-top: 0;
+div video {
+  width: 100%;
 }
 
 /*___TABLET/WEB version___*/
@@ -473,9 +483,20 @@ footer {
   /*TEMASIDER*/
 
   .section_wrapper {
+    border: 1px solid var(--secondary-color);
+    border-radius: 20px;
+    padding: 2rem;
+  }
+
+  .section_wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    place-items: center;
     gap: 1.2rem;
+  }
+
+  .section_wrapper div {
+    margin-bottom: 0;
   }
 
   .section_wrapper {
